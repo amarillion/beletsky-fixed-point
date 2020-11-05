@@ -17,18 +17,12 @@ ifeq ($(BUILD),DEBUG)
 	ALLEGRO_LIBS = $(addsuffix -debug-5, $(ALLEGRO_MODULES))
 endif
 
-# LIBS += `pkg-config --libs $(ALLEGRO_LIBS)`
+LIBS += `pkg-config --libs $(ALLEGRO_LIBS)`
 
 # linux-specific stuff:
 GPP = g++
 BINSUF =
 LFLAGS = 
-# ifeq ($(BUILD),RELEASE)
-# 	LIBS += `allegro-config --libs`
-# endif
-# ifeq ($(BUILD),DEBUG)
-# 	LIBS += `allegro-config --libs debug`
-# endif
 
 OBJDIR=obj
 
